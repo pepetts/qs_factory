@@ -1,0 +1,47 @@
+@charset "UTF-8";
+body{
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+.wrapper{
+  width: 980px;
+  margin: 0 auto;
+  overflow:hidden;
+}
+
+.container{
+  text-align:center;
+}
+input[type=submit]{
+  outline:none;
+}
+.qcount{
+  margin-top: 20px;
+}
+.answer{
+  display:none;
+}
+
+input[type="submit"]{
+  color: #fff;
+  background: #61e682;
+  width:150px;
+  height:30px;
+  cursor: pointer;
+  box-shadow: 0px 7px 0px rgba(83,217,118,0.5);
+  border-radius:7px;
+
+}
+input[type="submit"]:active{
+  position: relative;
+  top:7px;
+  box-shadow: none;
+}
+
+.q{
+  width: 160px;
+  float:left;
+}
+.clear{
+  overflow: hidden;
+}
