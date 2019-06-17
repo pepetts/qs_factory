@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Q's factory</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
 
   <script src="jquery-3.4.1.min.js"></script>
   <script src="main.js"></script>
@@ -14,7 +15,7 @@
 <div class="wrapper">
   <div class="container">
     <h1>計算問題を生成します</h1>
-    
+    <div class="time"><p></p></div>
     <form method="post">
       <label><input type="radio" name="which" value="add">足し算</label>
       <label><input type="radio" name="which" value="sub">引き算</label>
@@ -32,32 +33,31 @@
           } ?>
         </select>
       </div>
-      <p><input type="submit" value="生成"></p>
+      <p><input type="submit" value="スタート"></p>
       <input type="button" value="答えを表示" id="show_answer">
       <input type="button" value="答えを隠す" id="hide_answer">
     </form>
   </div>
+    
+    <?php
 
-
-  <?php
-
-  if($_POST["which"] == "add"){
+if($_POST["which"] == "add"){
   add($_POST["count"]);
-  }elseif($_POST["which"] == "sub"){
+}elseif($_POST["which"] == "sub"){
   sub($_POST["count"]);
-  }elseif($_POST["which"] == "multi"){
+}elseif($_POST["which"] == "multi"){
   multi($_POST["count"]);
-  }elseif($_POST["which"] == "division"){
+}elseif($_POST["which"] == "division"){
   division($_POST["count"]);
-  }elseif($_POST["which"] == "hex"){
+}elseif($_POST["which"] == "hex"){
   to_hex($_POST["count"]);
-  }elseif($_POST["which"] == "dec"){
+}elseif($_POST["which"] == "dec"){
   to_dec($_POST["count"]);
-  }
+}
 
 
-  //足し算
-  function add($count){
+//足し算
+function add($count){
   $numbers = range(0,100);
   shuffle($numbers);
   $i = 1;
@@ -72,17 +72,17 @@
     echo "</div>";
     $i++;
   }
-  }
+}
 
 
-  //引き算
-  function sub($count){
-
+//引き算
+function sub($count){
+  
   $numbers = range(0,100);
   shuffle($numbers);
   $i = 1;
   $answer = 0;
-
+  
   while($i <= $count){
     $val1 = $numbers[rand(0,100)];
     $val2 = $numbers[rand(0,100)];
@@ -95,16 +95,16 @@
       $i++;
     }
   }
-  }
+}
 
 
-  //掛け算
-  function multi($count){
+//掛け算
+function multi($count){
   $numbers = range(0,10);
   shuffle($numbers);
   $i = 1;
   $answer = 0;
-
+  
   while($i <= $count){
     $val1 = $numbers[rand(0,10)];
     $val2 = $numbers[rand(0,10)];
@@ -115,12 +115,12 @@
     echo "</div>";
     $i++;
   }
-  }
+}
 
 
 
-  //割り算
-  function division($count){
+//割り算
+function division($count){
   $i = 1;
   $answer = 0;
   while($i <= $count){
@@ -135,9 +135,9 @@
       $i++;
     }
   }
-  }
+}
 
-  function to_hex($count){
+function to_hex($count){
   $i = 1;
   $answer = 0;
   echo "<p>次の10進数を16進数に変換しなさい。</p>";
@@ -150,9 +150,9 @@
     echo "</div>";
     $i++;
   }
-  }
+}
 
-  function to_dec($count){
+function to_dec($count){
   $i = 1;
   $answer = 0;
   echo "<p>次の16進数を10進数に変換しなさい。</p>";
@@ -163,12 +163,12 @@
     $answer = hexdec($val);
     echo "<p class='answer'>答え：{$answer}</p>";
     echo "</div>";
-
+    
     $i++;
   }
-
-  }
-  ?>
+  
+}
+?>
 
 </div>
 </body>

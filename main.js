@@ -6,5 +6,8 @@ $(function(){
   $("#hide_answer").click(function(){
     $(".answer").hide();
   });
+
+
+  //Timer
   
 })
