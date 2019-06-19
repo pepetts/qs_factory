@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.cf::after{
+  content:"";
+  display:block;
+  clear:both;
+}
 body{
   font-family: 'Kosugi Maru', sans-serif;
   background:#F4E9D6;
@@ -12,18 +17,38 @@ body{
 
 .container{
   text-align:center;
+  margin-bottom:100px;
 }
 h1{
-  color:#88C44F;
+  color:#87CEEB;
+  margin-bottom:50px;
 }
-input[type=submit]{
+.btn{
+  box-shadow: 0px 7px 0px rgba(135,206,235,0.5);
+  border-radius:7px;
+  font-size:1.2rem;
+  cursor: pointer;
+}
+.btn:active{
+  position: relative;
+  top:7px;
+  box-shadow: none;
+}
+input[type=submit],
+.btn{
   outline:none;
 }
-label{
-  margin: 20px;
-}
+
 .qcount{
-  margin-top: 20px;
+  margin-top: 60px;
+  font-size:1.2rem;
+}
+.qcount select{
+  width:100px;
+  height:50px;
+  background:#87CEEB;
+  font-size:1.2rem;
+  color:#fff;
 }
 .answer{
   display:none;
@@ -31,11 +56,11 @@ label{
 
 input[type="submit"]{
   color: #fff;
-  background: #88C44F;
+  background: #87CEEB;
   width:150px;
   height:30px;
   cursor: pointer;
-  box-shadow: 0px 7px 0px rgba(136,196,79,0.5);
+  box-shadow: 0px 7px 0px rgba(135,206,235,0.5);
   border-radius:7px;
   font-size:1.2rem;
 }
@@ -51,4 +76,35 @@ input[type="submit"]:active{
 }
 .clear{
   overflow: hidden;
+}
+.btn_a{
+  width:30%;
+  float:left;
+  margin-left:40px;
+}
+.btn_a p{
+  margin-top:0;
+  margin-bottom:50px;
+}
+/* timer */
+#timer{
+  width:30%;
+  float:left;
+}
+#timer p{
+  margin-top:0;
+  font-size:2.4rem;
+}
+.select{
+  width:30%;
+  float:right;
+}
+#timer input,
+#show_answer,
+#hide_answer{
+  background-color:#87CEEB;
+  padding:10px;
+  border-radius:5px;
+  color:#fff;
+  font-size:1rem;
 }

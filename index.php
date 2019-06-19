@@ -13,29 +13,38 @@
 </head>
 <body>
 <div class="wrapper">
-  <div class="container">
+  <div class="container cf">
     <h1>計算問題を生成します</h1>
-    <div class="time"><p></p></div>
+    <div id="timer">
+      <p><span id="min">00</span>:<span id="sec">00</span></p>
+      <input id="start_btn" class="btn"  type="button" value="スタート">
+      <input id="stop_btn"  class="btn" type="button" value="ストップ">
+      <input id="reset_btn" class="btn"  type="button" value="リセット">
+    </div>
     <form method="post">
-      <label><input type="radio" name="which" value="add">足し算</label>
-      <label><input type="radio" name="which" value="sub">引き算</label>
-      <label><input type="radio" name="which" value="multi">掛け算</label>
-      <label><input type="radio" name="which" value="division">割り算</label>
-      <br>
-      <label><input type="radio" name="which" value="hex">10進数〜16進数へ</label>
-      <label><input type="radio" name="which" value="dec">16進数〜10進数へ</label>
-      <div class="qcount">
-        問題数：
-        <select name="count">
-          <option selected>未選択</option>
-          <?php for($i=1;$i<=100;$i++){
-            echo "<option value='{$i}'>{$i}問</option>";
-          } ?>
-        </select>
+      <div class="select">
+        <label><input type="radio" name="which" value="add">足し算</label>
+        <label><input type="radio" name="which" value="sub">引き算</label>
+        <label><input type="radio" name="which" value="multi">掛け算</label>
+        <label><input type="radio" name="which" value="division">割り算</label>
+        <br>
+        <!-- <label><input type="radio" name="which" value="hex">10進数〜16進数へ</label> -->
+        <!-- <label><input type="radio" name="which" value="dec">16進数〜10進数へ</label> -->
+        <div class="qcount">
+          問題数：
+          <select name="count">
+            <option selected>未選択</option>
+            <?php for($i=1;$i<=100;$i++){
+              echo "<option value='{$i}'>{$i}問</option>";
+            } ?>
+          </select>
+        </div>
       </div>
-      <p><input type="submit" value="スタート"></p>
-      <input type="button" value="答えを表示" id="show_answer">
-      <input type="button" value="答えを隠す" id="hide_answer">
+      <div class="btn_a">
+        <p><input type="submit" value="問題スタート"></p>
+          <input type="button" value="答えを表示" id="show_answer" class="btn">
+          <input type="button" value="答えを隠す" id="hide_answer" class="btn">
+      </div>
     </form>
   </div>
     
