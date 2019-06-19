@@ -4,6 +4,12 @@
   display:block;
   clear:both;
 }
+.disable{
+  pointer-events: none;
+}
+
+
+
 body{
   font-family: 'Kosugi Maru', sans-serif;
   background:#F4E9D6;
