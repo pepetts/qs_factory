@@ -41,28 +41,33 @@
         </div>
       </div>
       <div class="btn_a">
-        <p><input type="submit" value="問題スタート"></p>
+        <p>
+          <input id="q_start_btn" type="submit" value="問題スタート">
+        </p>
           <input type="button" value="答えを表示" id="show_answer" class="btn">
           <input type="button" value="答えを隠す" id="hide_answer" class="btn">
       </div>
     </form>
   </div>
     
-    <?php
+<?php
+  if(empty($_POST["which"]) || empty($_POST["count"])){
+    echo "<p class='message'>問題と問題数を選んでから「問題スタート」のボタンを押してください。</p>";
+  }
 
-if($_POST["which"] == "add"){
-  add($_POST["count"]);
-}elseif($_POST["which"] == "sub"){
-  sub($_POST["count"]);
-}elseif($_POST["which"] == "multi"){
-  multi($_POST["count"]);
-}elseif($_POST["which"] == "division"){
-  division($_POST["count"]);
-}elseif($_POST["which"] == "hex"){
-  to_hex($_POST["count"]);
-}elseif($_POST["which"] == "dec"){
-  to_dec($_POST["count"]);
-}
+  if($_POST["which"] == "add"){
+    add($_POST["count"]);
+  }elseif($_POST["which"] == "sub"){
+    sub($_POST["count"]);
+  }elseif($_POST["which"] == "multi"){
+    multi($_POST["count"]);
+  }elseif($_POST["which"] == "division"){
+    division($_POST["count"]);
+  }elseif($_POST["which"] == "hex"){
+    to_hex($_POST["count"]);
+  }elseif($_POST["which"] == "dec"){
+    to_dec($_POST["count"]);
+  }
 
 
 //足し算

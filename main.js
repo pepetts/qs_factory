@@ -1,4 +1,5 @@
 $(function(){
+
   $("#show_answer").click(function(){
     $(".answer").show();
   });

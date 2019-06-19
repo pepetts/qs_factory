@@ -7,7 +7,10 @@
 .disable{
   pointer-events: none;
 }
-
+.message{
+  text-align:center;
+  font-size:1.5rem;
+}
 
 
 body{
@@ -29,13 +32,14 @@ h1{
   color:#87CEEB;
   margin-bottom:50px;
 }
+
 .btn{
   box-shadow: 0px 7px 0px rgba(135,206,235,0.5);
   border-radius:7px;
   font-size:1.2rem;
   cursor: pointer;
 }
-.btn:active{
+.btn:active{ 
   position: relative;
   top:7px;
   box-shadow: none;
