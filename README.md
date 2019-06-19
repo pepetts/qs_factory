@@ -1,5 +1,5 @@
 # qsfactory
-php ver
+php ver  
 ruby versionはCUIで作成
 
 ## 背景
